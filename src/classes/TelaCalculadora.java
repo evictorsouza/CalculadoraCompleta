@@ -560,10 +560,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         c.botaoMemoriaMenos(txtTela.getText());
     }//GEN-LAST:event_btnMMenosMouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
