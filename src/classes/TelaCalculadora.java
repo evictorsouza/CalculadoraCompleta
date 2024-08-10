@@ -53,6 +53,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         setBackground(new java.awt.Color(102, 102, 102));
         setResizable(false);
 
+        txtTela.setEditable(false);
         txtTela.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtTela.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
