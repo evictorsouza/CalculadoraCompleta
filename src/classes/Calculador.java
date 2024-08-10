@@ -6,6 +6,7 @@ package classes;
 public class Calculador implements Calculadora{
     //ATRIBUTOS
     private double num;
+    private double memoria;
     private boolean somando;
     private boolean subtraindo;
     private boolean igual;
@@ -69,6 +70,18 @@ public class Calculador implements Calculadora{
         }
     }
     
+    private void somarMemoria(String valor){
+        this.setMemoria(this.getMemoria() + Double.parseDouble(valor));
+    }
+    
+    private void subtrairMemoria(String valor){
+        this.setMemoria(this.getMemoria() - Double.parseDouble(valor));
+    }
+    
+    private void limparMemoria(){
+        this.setMemoria(0);
+    }
+    
     private String isInteiro(){
         String inteiro;
         if (this.getNum() % 1 == 0){
@@ -78,9 +91,21 @@ public class Calculador implements Calculadora{
            }
         return inteiro;
     }
+    
+    public String isInteiroMemoria(){
+        String inteiro;
+        if (this.getNum() % 1 == 0){
+               inteiro = Integer.toString((int) this.getMemoria());
+           }else{
+               inteiro = Double.toString(this.getMemoria());
+           }
+        return inteiro;
+    }
+    
     // CONSTRUTOR
     public Calculador() {
         this.setNum(0);
+        this.setMemoria(0);
         this.setSomando(false);
         this.setSubtraindo(false);
         this.setMultiplicando(false);
@@ -97,6 +122,14 @@ public class Calculador implements Calculadora{
         this.num = num;
     }
 
+    private double getMemoria() {
+        return memoria;
+    }
+
+    private void setMemoria(double memoria) {
+        this.memoria = memoria;
+    }
+   
     private boolean isSomando() {
         return this.somando;
     }
@@ -135,7 +168,7 @@ public class Calculador implements Calculadora{
 
     private void setDividindo(boolean dividindo) {
         this.dividindo = dividindo;
-    } 
+    }
 
     //METODOS DA INTERFACE
     @Override
@@ -358,6 +391,26 @@ public class Calculador implements Calculadora{
     public String botaoClear() {
         this.setNum(0);
         return "0";
+    }
+
+    @Override
+    public void botaoMemoriaMais(String texto) {
+        this.somarMemoria(texto);
+    }
+
+    @Override
+    public void botaoMemoriaMenos(String texto) {
+        this.subtrairMemoria(texto);
+    }
+
+    @Override
+    public void botaoMemoriaClear() {
+        this.limparMemoria();
+    }
+
+    @Override
+    public String botaoMemoriaReveal() {
+        return this.isInteiroMemoria();
     }
     
     

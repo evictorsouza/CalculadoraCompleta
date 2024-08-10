@@ -25,5 +25,9 @@ public interface Calculadora {
     public abstract String botaoPorcentagem(String texto);
     public abstract String botaoIgual(String texto);
     public abstract String botaoClear();
+    public abstract void botaoMemoriaMais(String texto);
+    public abstract void botaoMemoriaMenos(String texto);
+    public abstract void botaoMemoriaClear();
+    public abstract String botaoMemoriaReveal();
     
 }
