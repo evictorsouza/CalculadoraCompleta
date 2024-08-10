@@ -94,7 +94,7 @@ public class Calculador implements Calculadora{
     
     public String isInteiroMemoria(){
         String inteiro;
-        if (this.getNum() % 1 == 0){
+        if (this.getMemoria() % 1 == 0){
                inteiro = Integer.toString((int) this.getMemoria());
            }else{
                inteiro = Double.toString(this.getMemoria());
