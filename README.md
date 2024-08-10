@@ -1,2 +1,1 @@
-# CalculadoraCompleta
-# CalculadoraCompleta
+Um projetinho para praticar
